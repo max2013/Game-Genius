@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Turbo!</title>
+	
+	<style type="text/css">
+	html, body {
+		background-color: #fff;
+		padding: 0;
+		margin: 0;
+		overflow: hidden;;
+	}
+	#canvas {
+		position: absolute;
+		left: 0;
+		top: 0;
+		display: block;;
+		margin: 0;
+		padding: 0;
+	}
+	</style>
+
+	<script src="libs/easeljs-NEXT.min.js"></script>
+	<script src="libs/preloadjs-NEXT.min.js"></script>
+	<script src="libs/tweenjs-NEXT.min.js"></script>
+	<script src="libs/movieclip-NEXT.min.js"></script>
+	<script src="libs/soundjs-NEXT.min.js"></script>
+	<script src="resources.js"></script>
+	<script src="Turbo.js"></script><!--  Main Application //-->
+
+
+</head>
+<body onload="init();" style="background-color:#fff; margin:0;padding:0">
+
+
+<div id="jogo" >
+	<canvas style="margin0; padding:0; display:block; background-color: #fff" id="canvas" width="768" height="1365"></canvas>
+	<input type="text" id="texto" class="innertext"></input>
+</div>
+</body>
+</html>
