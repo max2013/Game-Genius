@@ -7,8 +7,8 @@
 
 var lib = {
 	Infos : function () {
-		//var inf = [1,2,3,4,5,6,7,8,9,10,0];
-		var inf = [1,2,3,4];
+		var inf = [1,2,3,4,5,6,7,8,9,10,0];
+		//var inf = [1,2,3,0];
 		var l = inf.length;
 		var info = [];
 		for (var i=0; i<l; i++) {

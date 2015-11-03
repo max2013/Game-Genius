@@ -40,6 +40,20 @@
         
 <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 <link href="lib/bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css"/>
+<link href="styles/jquery-ui.css" rel="stylesheet">
+<style>
+         .ui-widget-header,.ui-state-default, ui-button{
+            background:#b9cd6d;
+            border: 1px solid #b9cd6d;
+            color: #000;
+            font-weight: bold;
+
+         }
+
+         .ui-dialog-titlebar-close {
+  visibility: hidden;
+}
+      </style>
 
 <!-- MY PLUGINS -->
 <script type="text/javascript" src="phonegap.js"></script>
@@ -74,32 +88,7 @@ function onDeviceReady()
 
 </head>
 <body onload="onDeviceReady();">
-<div class="header">
-    <a href="#" class="show-navigation"></a>
-    <a href="#" class="hide-navigation"></a>
-    <!--<img src="images/misc/logo.png" class="page-logo" alt="img" width="50">-->
-</div>
-
-<!--- MENU -->
-<div class="navigation" id="navigation">
-    <div class="navigation-wrapper">
-        <div class="nav-item">
-            <a href="index.html" class="landing-icon">Tela inicial<em class="unselected-item"></em></a>
-        </div>
-        <div class="nav-item">
-            <a href="homepage.html" class="homepage-icon">Dados do Participante<em class="selected-item"></em></a>
-        </div>
-        <div class="nav-item">
-            <a href="#" class="submenu-item features-icon">Visualizar cadastrados<em class="dropdown-item"></em></a>
-            <div class="submenu">
-                <a href="type.html">Typography</a>
-                <a href="jquery.html">jQuery</a>
-            </div>
-        </div>
-     
-    </div>
-</div>
-
+ 
 <div id="preloader">
 	<div id="status">
     	<p class="center-text"> Carregando conteúdo... </p>

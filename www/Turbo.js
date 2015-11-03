@@ -66,17 +66,17 @@ function init () {
 
 		{ src:"images/apresentacao.jpg", id:"apresentacao" },
 		{ src:"images/tela_cadastro.jpg", id:"cadastro" },
-		//{ src:"images/info_0.png", id:"info_0" },
-	//	{ src:"images/info_1.png", id:"info_1" },
-	//	{ src:"images/info_2.png", id:"info_2" },
-	//	{ src:"images/info_3.png", id:"info_3" },
-	//	{ src:"images/info_4.png", id:"info_4" },
-	//	{ src:"images/info_5.png", id:"info_5" },
-	//	{ src:"images/info_6.png", id:"info_6" },
-	//	{ src:"images/info_7.png", id:"info_7" },
-	//	{ src:"images/info_8.png", id:"info_8" },
-	//	{ src:"images/info_9.png", id:"info_9" },
-	//	{ src:"images/info_10.png", id:"info_10" },
+		{ src:"images/info_0.png", id:"info_0" },
+		{ src:"images/info_1.png", id:"info_1" },
+		{ src:"images/info_2.png", id:"info_2" },
+		{ src:"images/info_3.png", id:"info_3" },
+		{ src:"images/info_4.png", id:"info_4" },
+		{ src:"images/info_5.png", id:"info_5" },
+		{ src:"images/info_6.png", id:"info_6" },
+		{ src:"images/info_7.png", id:"info_7" },
+		{ src:"images/info_8.png", id:"info_8" },
+		{ src:"images/info_9.png", id:"info_9" },
+		{ src:"images/info_10.png", id:"info_10" },
 		{ src:"images/introducao.jpg", id:"introducao" },
 		{ src:"images/logo_turbo.png", id:"logo_turbo" },
 		{ src:"images/luz_pe.png", id:"luz_0" },
@@ -252,26 +252,24 @@ c.TelaCadastro = function () {
 		});
 
 		c.addEventListener("mostraInfo", function (e) {
-		/*	console.log("mostraInfo");
+			console.log("mostraInfo");
 			e.currentTarget.tempo.pause(true);
 			var instance = e.currentTarget.parent;
 			var modal = new lib.Modal("info_"+instance.infos.shift());
 			var modal2 = new lib.Modal("info_"+instance.infos.shift());
 
 			modal.addEventListener("click",function (e) {
-				instance.mostraModal(modal2);
-				modal2.addEventListener("click",function (e) {
+				//instance.mostraModal(modal2);
+				//modal2.addEventListener("click",function (e) {
 					var instance = e.currentTarget.parent;
 					instance.retomaJogada();
-				});
+				//});
 			});
 
-			instance.mostraModal(modal);*/
-			        var instance = e.currentTarget.parent;
-					Tween.get(instance).wait(2000).call(instance.retomaJogada());
-
-
-	
+			instance.mostraModal(modal);
+			        //var instance = e.currentTarget.parent;
+					//Tween.get(instance).wait(20000).call(instance.retomaJogada());
+ 
 
 		});
 
@@ -288,7 +286,7 @@ c.TelaCadastro = function () {
 	}
 	c.retomaJogada = function () {
 		this.removeModal();
-		//this.infoAtual++;
+		this.infoAtual++;
 		Tween.get(this.area).wait(1000).call(this.area.sequencia);
 		this.area.tempo.pause(false);
 	}
@@ -328,7 +326,7 @@ c.TelaCadastro = function () {
 		var _d = document.getElementsByTagName('html')[0],
 		_h = window.innerHeight,
 		_w = window.innerWidth,
-		_z = Math.min(1,_h/966,_w/924);
+		_z = Math.min(1,_h/1000,_w/924);
 		_d.style['-webkit-transform'] = 'scale('+_z+')';
 		_d.style['transform'] = 'scale('+_z+')';
 		window._zoomScale = _z;

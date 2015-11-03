@@ -11,6 +11,7 @@ var arrEmails = new Array();
 //Array
 
 var ExternalURL = 'http://posevento.com.br/server-app/eliquis/';
+var ExternalURLMVC = 'http://192.168.0.14/base_mvc4/';
 //var ExternalURL = 'http://www.abrafarmafuturetrends.com.br/beta/';
 $(window).load(function()
 {   
@@ -24,14 +25,10 @@ $(window).load(function()
                                             '</div><br><br>');
      $('#btSendMail2').click(function(){
                             
-                          if($('#repEmail').val() =="max@adm"){
-                             
-                             window.location='cadastro.html';
-                          }else{
-
-                            alert("Senha incorreta!");
-                          }
-                     }); 
+                            
+          window.location='cadastro.html';
+             
+            }); 
 
     ///SEND FORM
     $('#send-form').click(function(e){
