@@ -211,7 +211,7 @@ var Main = function () {
 		var c = new lib.TelaApresentacao();
 		c.addEventListener("click", function (e) {
 			var instance = e.currentTarget.parent;
-			instance.montaTela("cadastro");
+			instance.montaTela("introducao");
 		});
 		return c;
 	}
