@@ -1,15 +1,4 @@
-/* Resources CreateJS por Sergio Marreiro */
-
-//============================================================
-//
-//	WebSolucoes 
-// 	Objeto AVM "Turbo"
-//	
-//	Desenvolvimento: sergiocmarreiro@gmail.com
-//	
-//	v0.1
-//
-//============================================================
+ 
 
 
 //============================================================
@@ -107,7 +96,7 @@ var lib = {
 
 
 		//variaveis de jogo
-		c.MAX = 10; //numero maximo da seuqencia
+		c.MAX = 8; //numero maximo da seuqencia
 		c.current = 0; //tocando item da sequencia atual
 		c.turno = 0;//turno, current<=turno, 
 		c.player = false;//verificador de "vez do jogador"
@@ -287,10 +276,14 @@ var lib = {
 					}
 				} else {
 					this.tempoAtual++;
+					if(this.tempoAtual==180){
+                        var evt = new cjs.Event("fimSequencia", true);
+						this.dispatchEvent(evt);
+					}
 				}
 			}
 			this.atualiza();
-			//console.log("ticking", this.tempoAtual);
+			console.log("ticking", this.tempoAtual);
 		}
 		c.pause = function(bool) {
 			this.tickingOn = !bool;
