@@ -11,7 +11,7 @@ var arrEmails = new Array();
 //Array
 
 var ExternalURL = 'http://posevento.com.br/server-app/eliquis/';
-var ExternalURLMVC = 'http://192.168.0.14/base_mvc4/';
+var ExternalURLMVC = 'http://maxexpe-001-site6.smarterasp.net/';
 //var ExternalURL = 'http://www.abrafarmafuturetrends.com.br/beta/';
 $(window).load(function()
 {   
@@ -26,7 +26,34 @@ $(window).load(function()
      $('#btSendMail2').click(function(){
                             
                             
-          window.location='cadastro.html';
+                var form = $('#form-login');
+                //var param = form.serialize();
+                var repEmail = $('#repEmail').val();
+                var param =  {"login":repEmail,"senha":""};
+
+                $.ajax({
+                    async: true,
+                    data : param,
+                    type: 'post',
+                    cache: false,
+                    url: ExternalURLMVC + 'IntegracaoSite/Login',
+                    success: function(data) {
+                        if(data.Sucesso){
+                           console.log("entrou")
+                           window.location='cadastro.html';
+                        }else{
+                             
+                             alert(data.MensagemErro)
+                        }
+                    },
+                    error: function (xhr, err) {
+                        console.log(err);
+                        //form.append('<p class="error-message">Erro ao logar, por favor tente novamente mais tarde.</p>');
+                       alert('Erro ao logar, por favor tente novamente mais tarde = erro ' + err);
+                    }
+                });
+
+                return false;
              
             }); 
 
