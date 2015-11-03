@@ -53,7 +53,7 @@ function init () {
 
 		
 
-		var assetsPath = "http://www.avmeventos.com.br/clientes/sanofi/teste_turbo/_assets/audio/";
+		var assetsPath = "http://avmeventos.com.br/clientes/bayer/dr_sholl/_assets/audio/";
 	    createjs.Sound.alternateExtensions = ["mp3"];   // add other extensions to try loading if the src file extension is not supported
         createjs.Sound.addEventListener("fileload", createjs.proxy(soundLoaded, this)); // add an event listener for when load is completed
         createjs.Sound.registerSounds(sounds, assetsPath);

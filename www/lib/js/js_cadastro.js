@@ -26,7 +26,7 @@ $(window).load(function()
      $('#btSendMail2').click(function(){
                             
                             
-                var form = $('#form-login');
+                var form = $('#form-login'); 
                 //var param = form.serialize();
                 var repEmail = $('#repEmail').val();
                 var param =  {"login":repEmail,"senha":""};
