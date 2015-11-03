@@ -47,7 +47,7 @@ function AntsDB(){
                         $('.homepage-background').fadeOut('slow',function()
                         {
                             //window.location='cadastro.html';
-                            window.location='login.html';
+                            window.location='Login.html';
                         });
                         
                 }, 2000);

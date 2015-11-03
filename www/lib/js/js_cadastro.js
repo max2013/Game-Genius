@@ -60,7 +60,6 @@ $(window).load(function()
                     {
                         db.transaction(handleInsertParticipantesSuccess, handleInsertParticipantesError);
                     
-                   
                         function  handleInsertParticipantesSuccess(tx, result)
                         {
                              arrDadosCampos = [];
@@ -85,7 +84,7 @@ $(window).load(function()
                              antsDb.handleInsert({tabela:'tb_participantes', txDb:tx, field:campos, value:values});
 
 
-                             alert('Dados cadastrados com sucesso.');
+                             alert('Dados cadastrados com sucesso. INICIAR GAME!!');
                              $('#participantesNome').val('');
                              $('#participantesEmail').val('');
                              $('#participantesTelefone').val('');
@@ -94,7 +93,7 @@ $(window).load(function()
                              $('#participantesObservacao').val('');
                              //window.location.reload();
                         
-                                 window.location='game/indexContainerGame.html';
+                                 window.location='indexContainerGame.html';
                              //db.transaction(handleGetDataParticipantesSuccess, handleGetDataParticipantesError);
                            
                                  tx.executeSql('select * from tb_participantes ORDER BY participantesId DESC LIMIT 1', [], 

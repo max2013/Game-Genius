@@ -321,7 +321,8 @@ c.TelaCadastro = function () {
 	c.reiniciar = function () {
 		this.infos = new lib.Infos();
 		this.chances = lib.Chances();
-		this.montaTela("apresentacao");
+		//this.montaTela("apresentacao");
+		window.location='cadastro.html';
 	}
 	c.resize = function(){
 		var _d = document.getElementsByTagName('html')[0],
