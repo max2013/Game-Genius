@@ -127,7 +127,7 @@ $(window).load(function()
                              $('#participantesObservacao').val('');
                              //window.location.reload();
                         
-                              window.location='indexContainerGame.html';
+                              //window.location='indexContainerGame.html';
                              //db.transaction(handleGetDataParticipantesSuccess, handleGetDataParticipantesError);
                            
                                  tx.executeSql('select * from tb_participantes ORDER BY participantesId DESC LIMIT 1', [], 
@@ -328,8 +328,8 @@ $(window).load(function()
 
 
     function sendDataParticipanteServer(arrDados){
-
-            _idTreinador =   window.localStorage.getItem("idActualUserTreinador");
+            
+            _idTreinador = parseInt(window.localStorage.getItem("idActualUserTreinador"));
             var param =  {"nome":arrDados[0],"cpf":arrDados[1],"email":arrDados[2],"fone":arrDados[3],"idTreinador":_idTreinador};
 
            $.ajax({
@@ -350,7 +350,7 @@ $(window).load(function()
                     error: function (xhr, err) {
                         console.log(xhr);
                         //form.append('<p class="error-message">Erro ao logar, por favor tente novamente mais tarde.</p>');
-                       alert('Erro ao SalvarParticipante2, por favor tente novamente mais tarde = erro ' + err);
+                       alert('Erro ao SalvarParticipante2, por favor tente novamente mais tarde = erro ' + xhr);
                     }
                 });
 
