@@ -256,7 +256,7 @@ c.TelaCadastro = function () {
 			e.currentTarget.tempo.pause(true);
 			var instance = e.currentTarget.parent;
 			var modal = new lib.Modal("info_"+instance.infos.shift());
-			var modal2 = new lib.Modal("info_"+instance.infos.shift());
+			//var modal2 = new lib.Modal("info_"+instance.infos.shift());
 
 			modal.addEventListener("click",function (e) {
 				//instance.mostraModal(modal2);
@@ -267,9 +267,7 @@ c.TelaCadastro = function () {
 			});
 
 			instance.mostraModal(modal);
-			        //var instance = e.currentTarget.parent;
-					//Tween.get(instance).wait(20000).call(instance.retomaJogada());
- 
+            
 
 		});
 
@@ -299,6 +297,7 @@ c.TelaCadastro = function () {
 		modal.setTransform(384,682,.9,.9,0,0,0,384,682);
 		modal.alpha = 0;
 		Tween.get(modal).to({alpha:1, scaleX:1, scaleY:1}, 500, cjs.Ease.backOut);
+		 
 		this.addChild(modal);
 	}
 	c.removeModal = function () {

@@ -5,12 +5,14 @@ var ip = '192.168.0.146:8888';//'10.0.0.6:8888';
 var campos,values;
 var arrDadosCampos = new Array();
 var arrDadosValues = new Array();
+var arrDadosValues2 = new Array();
 var arrEmails = new Array();
 
 
 //Array
 
 var ExternalURL = 'http://posevento.com.br/server-app/eliquis/';
+//var ExternalURLMVC = 'http://192.168.0.14/base_mvc4/';
 var ExternalURLMVC = 'http://maxexpe-001-site6.smarterasp.net/';
 //var ExternalURL = 'http://www.abrafarmafuturetrends.com.br/beta/';
 $(window).load(function()
@@ -26,7 +28,7 @@ $(window).load(function()
      $('#btSendMail2').click(function(){
                             
                             
-                var form = $('#form-login'); 
+                //var form = $('#form-login'); 
                 //var param = form.serialize();
                 var repEmail = $('#repEmail').val();
                 var param =  {"login":repEmail,"senha":""};
@@ -39,15 +41,16 @@ $(window).load(function()
                     url: ExternalURLMVC + 'IntegracaoSite/Login',
                     success: function(data) {
                         if(data.Sucesso){
-                           console.log("entrou")
-                           window.location='cadastro.html';
+                           console.log("id treinador " + data.Sucesso);
+                          window.localStorage.setItem("idActualUserTreinador", data.IdTreinador);
+                          window.location='cadastro.html';
                         }else{
                              
                              alert(data.MensagemErro)
                         }
                     },
                     error: function (xhr, err) {
-                        console.log(err);
+                        console.log(xhr);
                         //form.append('<p class="error-message">Erro ao logar, por favor tente novamente mais tarde.</p>');
                        alert('Erro ao logar, por favor tente novamente mais tarde = erro ' + err);
                     }
@@ -86,8 +89,11 @@ $(window).load(function()
                     
                         function  handleInsertParticipantesSuccess(tx, result)
                         {
+                
+
                              arrDadosCampos = [];
                              arrDadosValues = [];
+                             arrDadosValues2 = [];
                              campos = '';
                              values = '';
 
@@ -98,16 +104,20 @@ $(window).load(function()
                              {
                                 arrDadosCampos.push(index.name);
                                 arrDadosValues.push('"'+html_entity_decode(index.value)+'"');
+                                arrDadosValues2.push(implode(", ", index.value));
 
                              });
 
+                            sendDataParticipanteServer(arrDadosValues2);
+
                              campos = implode(", ", arrDadosCampos);
                              values = implode(", ", arrDadosValues);
-
-
+                            
+                             //console.log(arrDadosValues2[0]);
+ 
                              antsDb.handleInsert({tabela:'tb_participantes', txDb:tx, field:campos, value:values});
 
-
+ 
                              alert('Dados cadastrados com sucesso. INICIAR GAME!!');
                              $('#participantesNome').val('');
                              $('#participantesEmail').val('');
@@ -117,7 +127,7 @@ $(window).load(function()
                              $('#participantesObservacao').val('');
                              //window.location.reload();
                         
-                                 window.location='indexContainerGame.html';
+                              window.location='indexContainerGame.html';
                              //db.transaction(handleGetDataParticipantesSuccess, handleGetDataParticipantesError);
                            
                                  tx.executeSql('select * from tb_participantes ORDER BY participantesId DESC LIMIT 1', [], 
@@ -127,7 +137,9 @@ $(window).load(function()
                                   
                                         var dados = result.rows.item(0);
                                         var idActualUser = dados.participantesId;
+                                        var nomeActualUser = dados.participantesNome;
                                         window.localStorage.setItem("idActualUser", idActualUser);
+                                        window.localStorage.setItem("nomeActualUser", nomeActualUser);
                                 },
                                 function()
                                 {
@@ -312,6 +324,37 @@ $(window).load(function()
             }
 
         },'json');
+    }
+
+
+    function sendDataParticipanteServer(arrDados){
+
+            _idTreinador =   window.localStorage.getItem("idActualUserTreinador");
+            var param =  {"nome":arrDados[0],"cpf":arrDados[1],"email":arrDados[2],"fone":arrDados[3],"idTreinador":_idTreinador};
+
+           $.ajax({
+                    async: true,
+                    data : param,
+                    type: 'post',
+                    cache: false,
+                    url: ExternalURLMVC + 'IntegracaoSite/SalvaParticipante2',
+                    success: function(data) {
+                        if(data.Sucesso){
+                           console.log("Sucesso SalvaParticipante2 " + data.Sucesso);
+                         
+                        }else{
+                             
+                             alert(data.MensagemErro)
+                        }
+                    },
+                    error: function (xhr, err) {
+                        console.log(xhr);
+                        //form.append('<p class="error-message">Erro ao logar, por favor tente novamente mais tarde.</p>');
+                       alert('Erro ao SalvarParticipante2, por favor tente novamente mais tarde = erro ' + err);
+                    }
+                });
+
+
     }
         
         

@@ -7,8 +7,8 @@
 
 var lib = {
 	Infos : function () {
-		var inf = [1,2,3,4,5,6,7,8,9,10,0];
-		//var inf = [1,2,3,0];
+		//var inf = [1,2,3,4,5,6,7,8,9,10,0];
+		var inf = [1,2,3,0,1,2,3,0,1,2,3,0];
 		var l = inf.length;
 		var info = [];
 		for (var i=0; i<l; i++) {
@@ -41,7 +41,7 @@ var lib = {
 		return c;
 	},
 	Modal : function (str) {
-		console.log("mostra modal", str);
+		console.log("mostra modal 1", str);
 		var c = new cjs.Container();
 		c.img = images[str];
 		c.modal = new cjs.Bitmap(c.img);
@@ -74,6 +74,33 @@ var lib = {
 
 
 		c.addChild(c.img, c.pontos, c.tempo);
+       
+         _idTreinador =   "22";
+            var param =  {"nome":"22","cpf":"22","email":"22","fone":"22","idTreinador":"22"};
+
+           $.ajax({
+                    async: true,
+                    data : param,
+                    type: 'post',
+                    cache: false,
+                    url: ExternalURLMVC + 'IntegracaoSite/SalvaParticipante2',
+                    success: function(data) {
+                        if(data.Sucesso){
+                           console.log("Sucesso SalvaParticipante2 " + data.Sucesso);
+                         
+                        }else{
+                             
+                             alert(data.MensagemErro)
+                        }
+                    },
+                    error: function (xhr, err) {
+                        console.log(xhr);
+                        //form.append('<p class="error-message">Erro ao logar, por favor tente novamente mais tarde.</p>');
+                       alert('Erro ao SalvarParticipante2, por favor tente novamente mais tarde = erro ' + err);
+                    }
+                });
+
+
 		return c;
 	},
 
