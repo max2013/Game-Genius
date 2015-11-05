@@ -75,11 +75,8 @@ var lib = {
 
 		c.addChild(c.img, c.pontos, c.tempo);
        
-         _idTreinador =   "22";
-            var param =  {"nome":"22","cpf":"22","email":"22","fone":"22","idTreinador":"22"};
-
-            
-
+        // _idTreinador =   "22";
+        //    var param =  {"nome":"22","cpf":"22","email":"22","fone":"22","idTreinador":"22"};
 
 		return c;
 	},
