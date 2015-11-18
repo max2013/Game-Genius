@@ -122,13 +122,8 @@ $(window).load(function()
                              $('#participantesNome').val('');
                              $('#participantesEmail').val('');
                              $('#participantesTelefone').val('');
-                             $('#participantesCargo').val('');
-                             $('#participantesFarmacia').val('');
                              $('#participantesCrm').val('');
-                             $('#participantesCidade').val('');
-                             $('#participantesObservacao').val('');
-                             //123
-                             //456
+                            
                              //window.location.reload();
                         
                               window.location='indexContainerGame.html';
