@@ -127,6 +127,7 @@ $(window).load(function()
                              $('#participantesCrm').val('');
                              $('#participantesCidade').val('');
                              $('#participantesObservacao').val('');
+                             //123
                              //window.location.reload();
                         
                               window.location='indexContainerGame.html';
@@ -155,6 +156,7 @@ $(window).load(function()
                         function  handleInsertParticipantesError(tx, result)
                         {
                             alert('Houve um erro ao cadastrar o participante. SQLlite error');
+                            console.log(tx);
                         }
                     }
                     else
