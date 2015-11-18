@@ -122,6 +122,8 @@ $(window).load(function()
                              $('#participantesNome').val('');
                              $('#participantesEmail').val('');
                              $('#participantesTelefone').val('');
+                             $('#participantesCargo').val('');
+                             $('#participantesFarmacia').val('');
                              $('#participantesCrm').val('');
                              $('#participantesCidade').val('');
                              $('#participantesObservacao').val('');
@@ -143,7 +145,7 @@ $(window).load(function()
                                 },
                                 function()
                                 {
-                                    
+                                     
                                 });
 
  
@@ -152,7 +154,7 @@ $(window).load(function()
                    
                         function  handleInsertParticipantesError(tx, result)
                         {
-                            alert('Houve um erro ao cadastrar o participante.');
+                            alert('Houve um erro ao cadastrar o participante. SQLlite error');
                         }
                     }
                     else
