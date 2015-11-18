@@ -101,7 +101,7 @@ $(window).load(function()
 
 
                              $.each(postData, function(i, index)
-                             {
+                             { 
                                 arrDadosCampos.push(index.name);
                                 arrDadosValues.push('"'+html_entity_decode(index.value)+'"');
                                 arrDadosValues2.push(implode(", ", index.value));

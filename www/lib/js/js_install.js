@@ -34,7 +34,7 @@ function AntsDB(){
 		"participantesId INTEGER PRIMARY KEY AUTOINCREMENT, " +//INTEGER PRIMARY KEY AUTOINCREMENT
 		"participantesNome VARCHAR(200), " +
 		"participantesEmail VARCHAR(250), " +
-		"participantesCrm VARCHAR(40), " +
+		"participantesCrm VARCHAR(40), " + 
 		"participantesTelefone VARCHAR(40), " +
                 "participantesCidade VARCHAR(200), " +
                 "participantesObservacao TEXT, " +
