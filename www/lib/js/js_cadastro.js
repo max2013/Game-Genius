@@ -11,10 +11,10 @@ var arrEmails = new Array();
 
 //Array
 
-var ExternalURL = 'http://posevento.com.br/server-app/eliquis/';
+ 
 //var ExternalURLMVC = 'http://192.168.0.14/base_mvc4/';
 var ExternalURLMVC = 'http://maxexpe-001-site6.smarterasp.net/';
-//var ExternalURL = 'http://www.abrafarmafuturetrends.com.br/beta/';
+ 
 $(window).load(function()
 {   
     $('#viewLogin').append('<div class="formFieldWrap">'+
@@ -127,7 +127,7 @@ $(window).load(function()
                              $('#participantesObservacao').val('');
                              //window.location.reload();
                         
-                              //window.location='indexContainerGame.html';
+                              window.location='indexContainerGame.html';
                              //db.transaction(handleGetDataParticipantesSuccess, handleGetDataParticipantesError);
                            
                                  tx.executeSql('select * from tb_participantes ORDER BY participantesId DESC LIMIT 1', [], 
