@@ -100,7 +100,7 @@ var lib = {
 
 
 		//variaveis de jogo
-		c.MAX = 8; //numero maximo da seuqencia
+		c.MAX = 6; //numero maximo da seuqencia
 		c.current = 0; //tocando item da sequencia atual
 		c.turno = 0;//turno, current<=turno, 
 		c.player = false;//verificador de "vez do jogador"

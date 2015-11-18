@@ -16,7 +16,7 @@ body{
 .homepage-wrapper{
 	position:relative;
 	z-index:999997;
-	margin-top:40px;
+	margin-top:0px;
 }
 
 .bg-pattern{

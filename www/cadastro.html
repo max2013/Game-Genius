@@ -69,45 +69,22 @@ function onDeviceReady()
     
     
     //if(sessionStorage == null) alert("Storage not supported by the browser");
-       // sessionStorage.firstname = 'Rafael';
+       // sessionStorage.firstname = 'teste';
 </script>
 
 </head>
 <body onload="onDeviceReady();">
 <div class="header">
-    <a href="#" class="show-navigation"></a>
-    <a href="#" class="hide-navigation"></a>
+    
     <!--<img src="images/misc/logo.png" class="page-logo" alt="img" width="50">-->
 </div>
-
-<!--- MENU -->
-<div class="navigation" id="navigation">
-    <div class="navigation-wrapper">
-        <div class="nav-item">
-            <a href="index.html" class="landing-icon">Tela inicial<em class="unselected-item"></em></a>
-        </div>
-        <div class="nav-item">
-            <a href="homepage.html" class="homepage-icon">Dados do Participante<em class="selected-item"></em></a>
-        </div>
-        <div class="nav-item">
-            <a href="#" class="submenu-item features-icon">Visualizar cadastrados<em class="dropdown-item"></em></a>
-            <div class="submenu">
-                <a href="type.html">Typography</a>
-                <a href="jquery.html">jQuery</a>
-            </div>
-        </div>
-     
-    </div>
-</div>
-
+ 
 <div id="preloader">
 	<div id="status">
     	<p class="center-text"> Carregando conteúdo... </p>
     </div>
 </div>
-
-
-
+ 
 <div class="homepage-wrapper">
         
     
@@ -140,7 +117,7 @@ function onDeviceReady()
                                 <input type="text" name="participantesNome" value="" class="contactField requiredField" id="participantesNome" required/>
                             </div>
                             <div class="formFieldWrap">
-                                <label class="field-title contactEmailField" for="participantesEmail">CPF</label>
+                                <label class="field-title contactCPFField" for="participantesEmail">CPF</label>
                                 <input type="email" name="participantesEmail" value="" class="contactField" id="participantesCPF"/>
                             </div>
 
@@ -149,28 +126,24 @@ function onDeviceReady()
                                 <label class="field-title contactEmailField" for="participantesEmail">E-mail</label>
                                 <input type="email" name="participantesEmail" value="" class="contactField" id="participantesEmail"/>
                             </div>
-                            
-                          <!--  <div class="formFieldWrap">
-                                <label class="field-title contactEmailField" for="participantesTelefone">Telefone</label>
-                                <input type="number" name="participantesTelefone" value="" class="contactField" id="participantesTelefone"/>
-                            </div>-->
+                             
+                            <div class="formFieldWrap">
+                                <label class="field-title contactCargoField" for="participantesCargo">Cargo</label>
+                                <input type="number" name="participantesCargo" value="" class="contactField" id="participantesCargo"/>
+                            </div>
+
+                             <div class="formFieldWrap">
+                                <label class="field-title contactFarmaciaField" for="participantesFarmacia">Farmácia</label>
+                                <input type="number" name="participantesCargo" value="" class="contactField" id="participantesFarmacia"/>
+                            </div>
                             
                              <div class="formFieldWrap">
                                 <label class="field-title contactEmailField" for="participantesCrm">TELEFONE Farmácia</label>
                                 <input type="text" name="participantesCrm" value="" class="contactField" id="participantesCrm"/>
                             </div> 
-                            
-                            
+                       
 
-                            <!-- <div class="formFieldWrap">
-                                <label class="field-title contactEmailField" for="participantesEspecialidade">Cidade</label>
-                                <input type="text" name="participantesCidade" value="" class="contactField" id="participantesCidade"/>
-                            </div>-->
-
-                            <div class="formTextareaWrap">
-                              <!--  <label class="field-title contactMessageTextarea" for="contactMessageTextarea">Observação</label>-->
-                                <!-- <textarea name="participantesObservacao" class="contactTextarea" id="participantesObservacao"></textarea>-->
-                            </div>
+                          
 
                         </fieldset>
                     </form> 

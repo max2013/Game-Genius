@@ -321,7 +321,7 @@ c.TelaCadastro = function () {
 		//this.montaTela("apresentacao");
 		window.location='cadastro.html';
 	}
-	c.resize = function(){
+	c.resize = function(){ 
 		var _d = document.getElementsByTagName('html')[0],
 		_h = window.innerHeight,
 		_w = window.innerWidth,
