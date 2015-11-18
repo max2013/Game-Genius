@@ -128,6 +128,7 @@ $(window).load(function()
                              $('#participantesCidade').val('');
                              $('#participantesObservacao').val('');
                              //123
+                             //456
                              //window.location.reload();
                         
                               window.location='indexContainerGame.html';
